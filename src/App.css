@@ -109,6 +109,11 @@ section {
   margin: 0 auto;
 }
 
+footer {
+  border-top: 2px solid rgb(74, 119, 224);
+  font-size: 1rem;
+}
+
 @media (max-width: 850px) {
   section {
     grid-template-columns: repeat(2, 1fr);

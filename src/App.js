@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './components/Header.js';
 import TravelPhotos from './components/TravelPhotos.js'
+import Footer from './components/Footer.js';
 import './App.css';
 
 
@@ -70,6 +71,8 @@ function App() {
         );
       })}
       </section>
+
+      <Footer />
 
 
     </div>
