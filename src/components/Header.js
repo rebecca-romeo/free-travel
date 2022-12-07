@@ -1,10 +1,10 @@
-
+import planeImage from './planeImage.png';
 const Header = () => {
   
   return (
     <header>
       {/* Header wave effect made using https://www.app.websitebackgroundmaker.com */}
-<div class="wave">
+<div className="wave">
       <svg width="100%" height="200px" fill="none" version="1.1"
       xmlns="http://www.w3.org/2000/svg">
         <path 
@@ -24,6 +24,7 @@ const Header = () => {
     <div id="container">
         <h1>FreeTravel</h1>
         <h2>explore the world from home</h2>
+        <img src={planeImage} alt="cartoon plane flying" />
     </div> 
     </header>
 

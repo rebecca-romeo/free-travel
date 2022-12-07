@@ -24,8 +24,9 @@
 
 
 h1 {
-  font-size: 7rem;
+  font-size: 8rem;
   margin: 0;
+  /* margin-top: 6rem; */
 }
 
 h2 {
@@ -59,4 +60,8 @@ div.wave{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+header img {
+  max-width: 100%;
 }
