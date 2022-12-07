@@ -20,6 +20,7 @@ function App() {
         client_id: apiKey,
         query: "china",
         orientation: "landscape",
+
         count: 21
       },
 
@@ -58,7 +59,7 @@ function App() {
 
 
 
-    <section>
+    <section className="wrapper">
       {photos.map((display) => {
         return (
           <TravelPhotos

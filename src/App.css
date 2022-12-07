@@ -35,6 +35,10 @@ body {
 
 }
 
+header {
+  margin-bottom: 4.5rem;
+}
+
 
 h1 {
   font-size: 5rem;
@@ -85,7 +89,7 @@ header img {
   /* display: flex; */
   
   gap: 25px;
-  margin: 0 40px 40px 40px;
+  margin: 0 20px 40px 20px;
   
 
 }
@@ -96,6 +100,13 @@ img {
 }
 
 section {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
+}
+
+.wrapper {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
 }
