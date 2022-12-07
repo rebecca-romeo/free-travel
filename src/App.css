@@ -36,7 +36,7 @@ body {
 }
 
 header {
-  margin-bottom: 4.5rem;
+  margin-bottom: 4rem;
 }
 
 
@@ -72,16 +72,14 @@ div.wave{
 #container {
     position: relative;
     background: linear-gradient(45deg, #5757D9 0%, #21D9F7 100%);
-    height: 90vh;
+    height:90vh;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-header img {
-  max-width: 100%;
-}
+
 
 .photos {
   /* display: grid; */
@@ -100,7 +98,7 @@ img {
 }
 
 section {
-  margin-top: 2rem;
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
 }
@@ -109,4 +107,58 @@ section {
   max-width: 1300px;
   width: 90%;
   margin: 0 auto;
+}
+
+@media (max-width: 850px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+  
+  @media (max-width: 710px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  } 
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  } 
+}
+
+@media (max-width: 500px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  h1 {
+    font-size: 3.8rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  } 
+}
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  } 
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  } 
 }
