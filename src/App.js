@@ -28,7 +28,6 @@ useEffect( () => {
       dataResponse: "json",
       params: {
         client_id: apiKey,
-        // query: "China",
         query: input,
         orientation: "landscape",   
         count: 21
@@ -41,25 +40,7 @@ useEffect( () => {
   }, [input]);
 
 
-  // const getPhotos = async () => {
-  //   const url = new URL('https://api.unsplash.com/photos/random')
 
-  //   url.search = new URLSearchParams({
-  //       client_id: 'Hmr8UwfnF0taBg8dfAjYymG0vhvNGt9QoT7BPAA599s',
-  //       query: input,
-  //       orientation: "landscape",   
-  //       count: 21
-  //   })
-
-  //   const res = await fetch(url)
-  //   const data = await res.json()
- 
-  //     setPhotos(response.data);
-  //     setCountry(response.data[0].location.country);
-  //     console.log("its being called")
-
-
-  // }
 
 
   const userChoice = (e) => {
@@ -68,7 +49,6 @@ useEffect( () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // getPhotos();
   }
 
   return (
