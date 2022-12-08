@@ -2,7 +2,9 @@ const Footer = () => {
   
   return (
   <footer>
-    <p>Made at Juno College 2022</p>
+    <p>Made by Rebecca Romeo</p>
+    <p>At <a href="www.junocollege.com">Juno College </a>2022</p>
+    
   </footer>
 
   )

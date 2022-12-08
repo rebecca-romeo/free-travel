@@ -3,7 +3,9 @@ import axios from 'axios';
 import Header from './components/Header.js';
 import TravelPhotos from './components/TravelPhotos.js'
 import Footer from './components/Footer.js';
+import './components/FontawesomeIcons';
 import './App.css';
+
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
       dataResponse: "json",
       params: {
         client_id: apiKey,
-        query: "australia",
+        query: "Australia",
         orientation: "landscape",   
         count: 21
       },
@@ -63,8 +65,6 @@ function App() {
     <div className="App">
       <Header />
 
-      {/* country name
-      data.location.country */}
       <h3>Welcome to {country}</h3>
 
 
@@ -75,7 +75,8 @@ function App() {
           <TravelPhotos
           key={display.id} 
           src={display.urls.small} 
-          alt={display.alt_description} 
+          alt={display.alt_description}
+          likes={display.likes} 
           />
         );
       })}
