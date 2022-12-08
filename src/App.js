@@ -7,6 +7,10 @@ import './App.css';
 
 
 function App() {
+  // state that holds the current country from api
+  const[country, setCountry] = useState('');
+
+  // state that holds the photos from api
   const[photos, setPhotos] = useState([]);
   
   useEffect( () => {
@@ -19,17 +23,18 @@ function App() {
       dataResponse: "json",
       params: {
         client_id: apiKey,
-        query: "china",
-        orientation: "landscape",
-
+        query: "australia",
+        orientation: "landscape",   
         count: 21
       },
-
     })
     .then( (res) => {
       console.log(res.data);
       setPhotos(res.data)
-      
+      console.log('country here', res.data[0].location.country)
+
+      // const countryName = res.data[0].location.country
+      setCountry(res.data[0].location.country);
     });
   }, []);
 
@@ -57,6 +62,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+
+      {/* country name
+      data.location.country */}
+      <h3>Welcome to {country}</h3>
 
 
 
