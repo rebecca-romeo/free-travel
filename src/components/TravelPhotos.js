@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function TravelPhotos(props) {
 
   return (
+
     <div className="photos">
       <img src={props.src} alt={props.alt} class="images" />
 

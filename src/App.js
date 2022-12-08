@@ -21,19 +21,15 @@ function App() {
   const[photos, setPhotos] = useState([]);
   
 useEffect( () => {
-    const apiKey = 'vnPTI_GeIusxNKCtoLsJ7My0JHYW7AsqvLt4_XuZfPs';
-
-
+    const apiKey = 'S_l5VSSM9ZkYpddFOn_INxteU9SXhiep_3HXheeBggg';
     axios({
       url: "https://api.unsplash.com/photos/random",
       method: "GET",
       dataResponse: "json",
       params: {
         client_id: apiKey,
- 
-        query: input,
         // query: "China",
-      
+        query: input,
         orientation: "landscape",   
         count: 21
       },
@@ -76,17 +72,19 @@ useEffect( () => {
   }
 
   return (
-    <div className="App">
+  <div className="App">
       <Header />
+
       <Form 
       userChoice={userChoice}
       input={input} 
       handleSubmit={handleSubmit} />
 
-      <h3>Welcome to {country}</h3>
+    <h3> {country}</h3>
 
     <section className="wrapper">
       {photos.map((display) => {
+
         return (
           <TravelPhotos
           key={display.id} 
