@@ -12,6 +12,8 @@ const Form = (props) => {
       id="userLocationChoice" 
       value={props.input} />
 
+      <button type="submit">Let's Explore!</button>
+
     </form>
   )
 
