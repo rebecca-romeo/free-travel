@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './components/Header.js';
+import Form from "./components/Form.js";
 import TravelPhotos from './components/TravelPhotos.js'
 import Footer from './components/Footer.js';
 import './components/FontawesomeIcons';
@@ -64,6 +65,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Form />
 
       <h3>Welcome to {country}</h3>
 
