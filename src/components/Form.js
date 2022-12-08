@@ -1,10 +1,16 @@
 
 
-const Form = () => {
+const Form = (props) => {
   return (
-    <form className="wrapper">
-      <label htmlFor="userLocationChoice">Enter a city or country</label>
-      <input type="text" id="userLocationChoice" />
+    <form 
+    onSubmit={props.handleSubmit}
+    className="wrapper">
+      <label htmlFor="userLocationChoice">Enter a country to begin</label>
+      <input 
+      onChange={props.userChoice} 
+      type="text" 
+      id="userLocationChoice" 
+      value={props.input} />
 
 
       <button type="submit">Let's Explore!</button>

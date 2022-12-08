@@ -9,51 +9,36 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 
-form {
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-
+/* GENERAL PAGE STLYING */
+.wrapper {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-input, 
-button {
-  width: 50%;
-  align-self: center;
-  border-radius: 10px;
+body {
+  font-size: 62.5%;
 }
-
-input {
-  border: 1.5px solid black;
-  padding: 0.5rem;
-}
-
-button {
-  border: none;
-  background-color: rgb(75, 117, 224);
-  color: white;
-  font-weight: bold;
-  letter-spacing: 0.4px;
-  padding: 0.6rem;
-  /* font-size: 1.1rem; */
-}
-
-button:hover,
-button:focus {
-  background-color: rgb(62, 148, 231);
-
-}
-
 
 .App {
   text-align: center;
 }
 
+/* HEADER SECTION */
+header {
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,36 +47,7 @@ button:focus {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-body {
-  font-size: 62.5%;
-
-}
-
-header {
-  margin-bottom: 4rem;
-}
-
-
-h1 {
-  font-size: 5rem;
-  margin: 0;
-  /* margin-top: 6rem; */
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2rem;
-  color: rgb(73, 71, 71);
-}
-
-/* Header wave effect made using https://www.app.websitebackgroundmaker.com */
+/* wave effect adapted from https://www.app.websitebackgroundmaker.com */
 body{
   height: 100%;
   margin: 0;
@@ -119,34 +75,74 @@ div.wave{
     flex-direction: column;
     justify-content: center;
 }
+/* end wave effect styling */
 
 
+/* FORM */
+form {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+}
+
+input, 
+button {
+  width: 50%;
+  align-self: center;
+  border-radius: 10px;
+}
+
+input {
+  border: 1.5px solid black;
+  padding: 0.5rem;
+}
+
+button {
+  border: none;
+  background-color: rgb(75, 117, 224);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  padding: 0.6rem;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(62, 148, 231);
+}
+
+h3 {
+  font-size: 2rem;
+  color: rgb(73, 71, 71);
+  margin-bottom: 0;
+  margin-top: 5rem;
+}
+
+
+/* PHOTO SECTION */
+section {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+}
 
 .photos {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* display: flex; */
-  /* border: 1px solid rgba(73, 71, 71, 0.6); */
   border-radius: 8px;
   
   gap: 25px;
   margin: 0 20px 40px 20px;
 }
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover,
-a:focus {
-  color: rgb(74, 119, 224);
-  font-weight: bold;
-}
 
 .images {
   min-height: 85%;
-  /* border-radius: 7.5px 7.5px 0 0; */
   border-radius: 8px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .likes {
@@ -160,28 +156,25 @@ a:focus {
   color: rgba(246, 7, 7, 0.75);
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-section {
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-}
-
-.wrapper {
-  max-width: 1300px;
-  width: 90%;
-  margin: 0 auto;
-}
-
+/* FOOTER SECTION */
 footer {
   border-top: 2px solid rgb(74, 119, 224);
   font-size: 0.9rem;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: rgb(74, 119, 224);
+  font-weight: bold;
+}
+
+
+/* MEDIA QUERIES */
 @media (max-width: 850px) {
   section {
     grid-template-columns: repeat(2, 1fr);
@@ -234,4 +227,15 @@ footer {
   h2 {
     font-size: 1.4rem;
   } 
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    font-size: 1.1rem;
+  }
+  button,
+  input {
+    padding: 0.6rem;
+  }
 }

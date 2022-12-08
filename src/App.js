@@ -10,14 +10,18 @@ import './App.css';
 
 
 function App() {
+
   // state that holds the current country from api
   const[country, setCountry] = useState('');
+
+  // state that holds the user's form input 
+  const[input, setInput] = useState('');
 
   // state that holds the photos from api
   const[photos, setPhotos] = useState([]);
   
-  useEffect( () => {
-    const apiKey = 'Hmr8UwfnF0taBg8dfAjYymG0vhvNGt9QoT7BPAA599s';
+useEffect( () => {
+    const apiKey = 'vnPTI_GeIusxNKCtoLsJ7My0JHYW7AsqvLt4_XuZfPs';
 
 
     axios({
@@ -26,20 +30,19 @@ function App() {
       dataResponse: "json",
       params: {
         client_id: apiKey,
-        query: "Australia",
+ 
+        query: input,
+        // query: "China",
+      
         orientation: "landscape",   
         count: 21
       },
     })
     .then( (res) => {
-      console.log(res.data);
       setPhotos(res.data)
-      console.log('country here', res.data[0].location.country)
-
-      // const countryName = res.data[0].location.country
       setCountry(res.data[0].location.country);
     });
-  }, []);
+  }, [input]);
 
 
   // const getPhotos = async () => {
@@ -47,29 +50,40 @@ function App() {
 
   //   url.search = new URLSearchParams({
   //       client_id: 'Hmr8UwfnF0taBg8dfAjYymG0vhvNGt9QoT7BPAA599s',
-  //       query: "china",
-  //       count: 20
+  //       query: input,
+  //       orientation: "landscape",   
+  //       count: 21
   //   })
 
   //   const res = await fetch(url)
   //   const data = await res.json()
-  //   console.log(data)
-  //   console.log(data.urls.small)
+ 
+  //     setPhotos(response.data);
+  //     setCountry(response.data[0].location.country);
+  //     console.log("its being called")
+
+
   // }
-  // getPhotos();
 
 
+  const userChoice = (e) => {
+    setInput(e.target.value)
+  }
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // getPhotos();
+  }
 
   return (
     <div className="App">
       <Header />
-      <Form />
+      <Form 
+      userChoice={userChoice}
+      input={input} 
+      handleSubmit={handleSubmit} />
 
       <h3>Welcome to {country}</h3>
-
-
 
     <section className="wrapper">
       {photos.map((display) => {
@@ -85,8 +99,6 @@ function App() {
       </section>
 
       <Footer />
-
-
     </div>
   );
 }
