@@ -17,18 +17,20 @@ function App() {
   // state that holds the user's form input 
   const[input, setInput] = useState('');
 
+  const[savedInput, setSavedInput] = useState('');
+
   // state that holds the photos from api
   const[photos, setPhotos] = useState([]);
   
 useEffect( () => {
-    const apiKey = 'Hmr8UwfnF0taBg8dfAjYymG0vhvNGt9QoT7BPAA599s';
+    const apiKey = 'vnPTI_GeIusxNKCtoLsJ7My0JHYW7AsqvLt4_XuZfPs';
     axios({
       url: "https://api.unsplash.com/photos/random",
       method: "GET",
       dataResponse: "json",
       params: {
         client_id: apiKey,
-        query: input,
+        query: savedInput,
         orientation: "landscape",   
         count: 21
       },
@@ -37,25 +39,28 @@ useEffect( () => {
       setPhotos(res.data)
       setCountry(res.data[0].location.country);
     });
-  }, [input]);
-
-
-
+  }, [savedInput]);
 
 
   const userChoice = (e) => {
     setInput(e.target.value)
   }
 
+  
+  console.log("this one", savedInput);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSavedInput(input);
   }
+
+
 
   return (
   <div className="App">
-      <Header />
+    <Header />
 
-      <Form 
+    <Form 
       userChoice={userChoice}
       input={input} 
       handleSubmit={handleSubmit} />
@@ -64,7 +69,6 @@ useEffect( () => {
 
     <section className="wrapper">
       {photos.map((display) => {
-
         return (
           <TravelPhotos
           key={display.id} 
