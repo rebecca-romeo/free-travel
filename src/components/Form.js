@@ -5,7 +5,7 @@ const Form = (props) => {
     <form 
     onSubmit={props.handleSubmit}
     className="wrapper">
-      <label htmlFor="userLocationChoice">Enter a country to begin</label>
+      <label htmlFor="userLocationChoice">Enter a country or city to begin</label>
       <input 
       onChange={props.userChoice} 
       type="text" 
