@@ -10,7 +10,9 @@ const Form = (props) => {
       onChange={props.userChoice} 
       type="text" 
       id="userLocationChoice" 
-      value={props.input} />
+      value={props.input}
+      required  />
+
 
       <button type="submit">Let's Explore!</button>
 

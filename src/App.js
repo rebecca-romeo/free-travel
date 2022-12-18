@@ -13,17 +13,18 @@ function App() {
 
   // state that holds the current country from api
   const[country, setCountry] = useState('');
+  const[city, setCity] = useState('');
 
   // state that holds the user's form input 
   const[input, setInput] = useState('');
 
-  const[savedInput, setSavedInput] = useState('');
+  const[savedInput, setSavedInput] = useState('Canada');
 
   // state that holds the photos from api
   const[photos, setPhotos] = useState([]);
   
 useEffect( () => {
-    const apiKey = 'vnPTI_GeIusxNKCtoLsJ7My0JHYW7AsqvLt4_XuZfPs';
+    const apiKey = 'LVlFUSS-0R1ZRwOiVjZsa_qT7YxsbG2YpjNTAkYc5bg';
     axios({
       url: "https://api.unsplash.com/photos/random",
       method: "GET",
@@ -36,10 +37,27 @@ useEffect( () => {
       },
     })
     .then( (res) => {
-      setPhotos(res.data)
-      setCountry(res.data[0].location.country);
+      if(res.data[0].location.country !== null || res.data[0].location.city !== null) {
+        setPhotos(res.data)
+        setCountry(res.data.location.country);
+        console.log("checking the country", res.data.location.country);
+        setCity(res.data.location.city);
+        console.log("checking out the data", res.data[0])
+      } else {
+        alert('Sorry, please try again!');
+      }
+
     });
   }, [savedInput]);
+
+
+  // if(country === null || city === null)
+
+  // on submit, if location = null, return error alert
+  // else return data 
+
+
+
 
 
   const userChoice = (e) => {
