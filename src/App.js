@@ -13,7 +13,6 @@ function App() {
 
   // state that holds the current country from api
   const[country, setCountry] = useState('');
-  const[city, setCity] = useState('');
 
   // state that holds the user's form input 
   const[input, setInput] = useState('');
@@ -39,25 +38,13 @@ useEffect( () => {
     .then( (res) => {
       if(res.data[0].location.country !== null || res.data[0].location.city !== null) {
         setPhotos(res.data)
-        setCountry(res.data.location.country);
-        console.log("checking the country", res.data.location.country);
-        setCity(res.data.location.city);
-        console.log("checking out the data", res.data[0])
+        setCountry(res.data[0].location.country);
       } else {
         alert('Sorry, please try again!');
       }
 
     });
   }, [savedInput]);
-
-
-  // if(country === null || city === null)
-
-  // on submit, if location = null, return error alert
-  // else return data 
-
-
-
 
 
   const userChoice = (e) => {
@@ -83,7 +70,7 @@ useEffect( () => {
       input={input} 
       handleSubmit={handleSubmit} />
 
-    <h3> {country}</h3>
+    <h3>{country}</h3>
 
     <section className="wrapper">
       {photos.map((display) => {
